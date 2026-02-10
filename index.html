@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>SYNTRIC MEDIA – Premium Performance & AI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +25,8 @@ tailwind.config = {
         cardBg: 'rgba(20,20,30,0.75)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Manrope', 'sans-serif'],
       },
       boxShadow: {
         'neon': '0 8px 20px rgba(0,194,168,0.3), 0 4px 10px rgba(59,130,246,0.2)',
@@ -34,10 +37,26 @@ tailwind.config = {
 </script>
 
 <style>
+/* Body default font */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   color: #E0E0E0;
   background: #0E1624;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+/* Buttons & Cards */
+button, .glass {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+/* Inputs and textareas */
+input, textarea {
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* Gradient Text */
@@ -135,16 +154,6 @@ nav a:hover {
   background-size: cover;
   background-position: center;
 }
-.bg-services {
-  background-image: url('https://images.unsplash.com/photo-1581092795365-2e0cbec3f0b7?auto=format&fit=crop&w=1470&q=80');
-  background-size: cover;
-  background-position: center;
-}
-.bg-ai {
-  background-image: url('https://images.unsplash.com/photo-1581092580508-0be5b9c1c78e?auto=format&fit=crop&w=1470&q=80');
-  background-size: cover;
-  background-position: center;
-}
 
 /* Dark overlay for readability */
 .overlay-black {
@@ -154,11 +163,17 @@ nav a:hover {
   z-index: 0;
 }
 
-/* Mobile specific adjustments */
+/* New Background Colors for Sections */
+.bg-lightgreen { background-color: #d4f1d4; }
+.bg-lightgrey { background-color: #f0f0f0; }
+.bg-lightblue { background-color: #d0e8ff; }
+.bg-lightyellow { background-color: #fff9d6; }
+
+/* Mobile adjustments */
 @media (max-width: 768px){
   .glass { padding: 1rem; }
   .overlay-black { background-color: rgba(0,0,0,0.65); }
-  h2 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
   p { font-size: 1rem; }
 }
 </style>
@@ -184,16 +199,6 @@ nav a:hover {
 
 <!-- HERO -->
 <section class="min-h-screen flex items-center px-4 md:px-8 pt-32 reveal relative bg-hero">
-<!-- MOBILE HIGHLIGHTS (only visible on phones) -->
-<section class="md:hidden px-4 py-6 bg-black/50 backdrop-blur-lg">
-  <div class="max-w-7xl mx-auto flex flex-col gap-4">
-    <a href="#services" class="glass lift p-4 text-center shadow-neon">Services</a>
-    <a href="#ai" class="glass lift p-4 text-center shadow-neon">AI Edge</a>
-    <a href="#results" class="glass lift p-4 text-center shadow-neon">Results</a>
-    <a href="#about" class="glass lift p-4 text-center shadow-neon">About Us</a>
-  </div>
-</section>
-
   <div class="overlay-black"></div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto relative z-10">
     <div class="space-y-6">
@@ -225,8 +230,7 @@ nav a:hover {
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="px-4 md:px-8 py-20 reveal relative bg-services">
-  <div class="overlay-black"></div>
+<section id="services" class="px-4 md:px-8 py-20 reveal relative bg-lightgreen">
   <div class="relative z-10 max-w-7xl mx-auto">
     <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 gradient-text">Core Services</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -238,8 +242,7 @@ nav a:hover {
 </section>
 
 <!-- AI EDGE -->
-<section id="ai" class="px-4 md:px-8 py-20 reveal relative bg-ai">
-  <div class="overlay-black"></div>
+<section id="ai" class="px-4 md:px-8 py-20 reveal relative bg-lightgrey">
   <div class="relative z-10 max-w-7xl mx-auto">
     <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 gradient-text">AI Performance Edge</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
@@ -252,7 +255,7 @@ nav a:hover {
 </section>
 
 <!-- RESULTS -->
-<section id="results" class="px-4 md:px-8 py-20 reveal bg-black/30 backdrop-blur-lg">
+<section id="results" class="px-4 md:px-8 py-20 reveal bg-lightblue">
   <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 gradient-text">Results</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
     <div class="glass card-5 lift p-6 shadow-neon text-center">5.4x ROAS – D2C</div>
@@ -262,13 +265,13 @@ nav a:hover {
 </section>
 
 <!-- ABOUT US -->
-<section id="about" class="px-4 md:px-8 py-24 reveal">
+<section id="about" class="px-4 md:px-8 py-24 reveal bg-lightyellow">
   <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 gradient-text">About SyntricMedia</h2>
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     <div class="space-y-6">
-      <p class="text-gray-300 text-base md:text-lg">SyntricMedia is a leading digital marketing agency specializing in AI-powered growth strategies. We combine performance marketing expertise with innovative technology to help brands scale efficiently.</p>
-      <p class="text-gray-300 text-base md:text-lg">Example: A D2C e-commerce client achieved <span class="gradient-text font-bold">+326% leads</span> and <span class="gradient-text font-bold">4.8x ROAS</span> in 3 months using AI-targeted campaigns.</p>
-      <p class="text-gray-300 text-base md:text-lg">Services include AI automation, smart funnels, performance marketing, and growth optimization tailored to each client.</p>
+      <p class="text-gray-800 text-base md:text-lg">SyntricMedia is a leading digital marketing agency specializing in AI-powered growth strategies. We combine performance marketing expertise with innovative technology to help brands scale efficiently.</p>
+      <p class="text-gray-800 text-base md:text-lg">Example: A D2C e-commerce client achieved <span class="gradient-text font-bold">+326% leads</span> and <span class="gradient-text font-bold">4.8x ROAS</span> in 3 months using AI-targeted campaigns.</p>
+      <p class="text-gray-800 text-base md:text-lg">Services include AI automation, smart funnels, performance marketing, and growth optimization tailored to each client.</p>
     </div>
     <div class="grid gap-6">
       <div class="glass card-5 lift p-6 text-center shadow-neon">AI Campaign Optimization</div>
